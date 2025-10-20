@@ -25,14 +25,14 @@ const config = {
   ],
   author: "Vu Thai Binh Duong",
   email: "binhduong31725@gmail.com",
-  site: "https://vubinhduong.site",
+  site: "https://binhduong-portfolio.netlify.app",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/vubinhduong",
-    linkedin: "https://www.linkedin.com/in/vubinhduong/",
+    twitter: "https://x.com/BnhDngVThi1",
+    linkedin: "https://www.linkedin.com/in/bduonng/",
     instagram: "https://www.instagram.com/bduuong/",
     facebook: "https://www.facebook.com/BDuonng/",
     github: "https://github.com/BDuong31",
