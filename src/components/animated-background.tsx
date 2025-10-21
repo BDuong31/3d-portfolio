@@ -117,6 +117,8 @@ const AnimatedBackground = () => {
   const splineContainer = useRef<HTMLDivElement>(null);
   const [splineApp, setSplineApp] = useState<Application>();
 
+
+
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [activeSection, setActiveSection] = useState<Section>("hero");
   const [bongoAnimation, setBongoAnimation] = useState<{
