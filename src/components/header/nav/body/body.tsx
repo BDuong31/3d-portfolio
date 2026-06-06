@@ -6,6 +6,7 @@ import { Link as LinkType } from "@/types";
 import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/language";
 
 interface SelectedLink {
   isActive: boolean;
@@ -27,6 +28,8 @@ export default function Body({
 }: BodyProps) {
   const params = useParams();
   const [currentHref, setCurrentHref] = useState("/");
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     const { pathname, hash } = window.location;
@@ -57,6 +60,7 @@ export default function Body({
     <div className={cn(styles.body, "flex flex-col items-end md:flex-row")}>
       {links.map((link, index) => {
         const { title, href, target } = link;
+        const translatedTitle = t(`nav.${title.toLowerCase()}`);
 
         return (
           <Link
@@ -80,7 +84,7 @@ export default function Body({
                   : "closed"
               }
             >
-              {getChars(title)}
+              {getChars(translatedTitle)}
             </motion.p>
           </Link>
         );

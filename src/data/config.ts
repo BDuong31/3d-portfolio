@@ -1,9 +1,10 @@
+import portfolioData from "./portfolio-data.json";
+
 const config = {
-  title: "Vu Thai Binh Duong | Full-Stack Developer",
+  title: portfolioData.config.title,
   description: {
-    long: "Explore the portfolio of Vu Thai Binh Duong, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
-    short:
-      "Discover the portfolio of Vu Thai Binh Duong, a full-stack developer creating interactive web experiences and innovative projects.",
+    long: portfolioData.config.description.en,
+    short: portfolioData.config.description.en.slice(0, 160) + "...",
   },
   keywords: [
     "Binh Duong",
@@ -23,19 +24,32 @@ const config = {
     "Spline",
     "Framer Motion",
   ],
-  author: "Vu Thai Binh Duong",
-  email: "binhduong31725@gmail.com",
+  author: portfolioData.config.author.en,
+  email: portfolioData.config.email,
   site: "https://binhduong-portfolio.netlify.app",
+  resumeUrl: portfolioData.config.resumeUrl,
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
-  social: {
-    twitter: "https://x.com/BnhDngVThi1",
-    linkedin: "https://www.linkedin.com/in/bduonng/",
-    instagram: "https://www.instagram.com/bduuong/",
-    facebook: "https://www.facebook.com/BDuonng/",
-    github: "https://github.com/BDuong31",
-  },
+  social: { ...portfolioData.config.social },
 };
-export { config };
+
+function updateConfig(newConfig: any) {
+  if (!newConfig) return;
+  if (newConfig.title) config.title = newConfig.title;
+  if (newConfig.description) {
+    if (newConfig.description.en) {
+      config.description.long = newConfig.description.en;
+      config.description.short = newConfig.description.en.slice(0, 160) + "...";
+    }
+  }
+  if (newConfig.author && newConfig.author.en) config.author = newConfig.author.en;
+  if (newConfig.email) config.email = newConfig.email;
+  if (newConfig.resumeUrl) config.resumeUrl = newConfig.resumeUrl;
+  if (newConfig.social) {
+    Object.assign(config.social, newConfig.social);
+  }
+}
+
+export { config, updateConfig };

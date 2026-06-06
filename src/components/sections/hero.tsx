@@ -13,9 +13,11 @@ import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { config } from "@/data/config";
+import { useLanguage } from "@/contexts/language";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
+  const { t, language } = useLanguage();
 
   return (
     <section id="hero" className={cn("relative w-full h-screen")}>
@@ -38,7 +40,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Hi, I am
+                    {t("hero.hi")}
                     <br className="md:hidden" />
                   </p>
                 </BlurIn>
@@ -51,9 +53,9 @@ const HeroSection = () => {
                           "cursor-default text-edge-outline font-display sm:text-5xl md:text-5xl "
                         )}
                       >
-                        {config.author.split(" ")[0]} {config.author.split(" ")[1]}
+                        {t("author").split(" ")[0]} {t("author").split(" ")[1]}
                         <br className="md:block hiidden" />
-                        {config.author.split(" ")[2]} {config.author.split(" ")[3]}
+                        {t("author").split(" ")[2]} {t("author").split(" ")[3]}
                         {/* PLEASE hello??
 
                         <br className="md:block hiidden" />
@@ -64,7 +66,7 @@ const HeroSection = () => {
                       side="top"
                       className="dark:bg-white dark:text-black"
                     >
-                      theres something waiting for you in devtools
+                      {t("hero.devtoolsHint")}
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
@@ -76,22 +78,20 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    A Full Stack Web Developer
+                    {t("hero.subtitle")}
                   </p>
                 </BlurIn>
               </div>
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
                 <Link
-                  href={
-                    "https://drive.google.com/file/d/1KvXjtFeXeB9T2I-fxH9VDDS5OY-B6lSy/view?usp=sharing"
-                  }
+                  href={config.resumeUrl}
                   target="_blank"
                   className="flex-1"
                 >
                   <BoxReveal delay={2} width="100%" >
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
-                      <p>Resume</p>
+                      <p>{t("hero.resume")}</p>
                     </Button>
                   </BoxReveal>
                 </Link>
@@ -103,12 +103,12 @@ const HeroSection = () => {
                           variant={"outline"}
                           className="block w-full overflow-hidden"
                         >
-                          Hire Me
+                          {language == "vi" ? "Thuê tôi" : "Hire me"}
                         </Button>
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
-                      <p>pls 🥹 🙏</p>
+                      <p>Pls! 🥹 🙏</p>
                     </TooltipContent>
                   </Tooltip>
                   <Link

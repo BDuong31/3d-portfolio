@@ -39,33 +39,10 @@ import { VscCode } from "react-icons/vsc";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { TbTerminal2 } from "react-icons/tb";
-
-const CONTACT_LINKS = [
-  {
-    name: "Email",
-    content: "naresh.khatri2345@gmail",
-    href: "mailto:naresh.khatri2345@gmail.com",
-    icon: <FaEnvelope height={"50px"} />,
-  },
-  {
-    name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
-    icon: <FaPhone height={"50px"} />,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/naresh-khatri/",
-    content: "/naresh-khatri",
-    icon: <FaLinkedin height={"50px"} />,
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/Naresh-Khatri",
-    content: "/naresh-khatri",
-    icon: <FaGithub height={"50px"} />,
-  },
-];
+import { ExternalLink, Calendar, Newspaper } from "lucide-react";
+import { config } from "@/data/config";
+import { useLanguage } from "@/contexts/language";
+import { usePortfolio } from "@/contexts/portfolio";
 
 const TOOLS = [
   {
@@ -229,6 +206,32 @@ const TOOLS = [
 
 function Page() {
   const [toolsLoaded, setToolsLoaded] = useState(false);
+  const { t, language } = useLanguage();
+  const { data } = usePortfolio();
+
+  const avatarUrl = data?.config?.about?.avatar || "/assets/me.jpg";
+
+  const CONTACT_LINKS = [
+    {
+      name: "Email",
+      content: config.email,
+      href: `mailto:${config.email}`,
+      icon: <FaEnvelope className="h-[50px] w-auto" />,
+    },
+    {
+      name: "LinkedIn",
+      href: config.social.linkedin,
+      content: config.social.linkedin.replace("https://www.linkedin.com/in/", "/"),
+      icon: <FaLinkedin className="h-[50px] w-auto" />,
+    },
+    {
+      name: "GitHub",
+      href: config.social.github,
+      content: config.social.github.replace("https://github.com/", "/"),
+      icon: <FaGithub className="h-[50px] w-auto" />,
+    },
+  ];
+
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
@@ -245,16 +248,28 @@ function Page() {
             <div className="flex flex-row lg:flex-col items-center">
               <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
                 <img
-                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800"
+                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800 object-cover"
                   alt="me"
-                  src="/assets/me.jpg"
+                  src={avatarUrl}
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl">{t("author")}</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  {t("about.role")}
                 </div>
+                {/* Active status */}
+                {data?.config?.about?.available !== false ? (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] text-emerald-400 font-medium bg-emerald-500/10 px-2.5 py-0.5 rounded-full mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    {language === "vi" ? "Sẵn sàng làm việc" : "Available for hire"}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] text-amber-400 font-medium bg-amber-500/10 px-2.5 py-0.5 rounded-full mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    {language === "vi" ? "Đang bận" : "Currently busy"}
+                  </span>
+                )}
               </div>
             </div>
             <div className="hidden lg:block">
@@ -285,20 +300,14 @@ function Page() {
             className="p-10 border-[.5px] rounded-md border-zinc-600"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
+            <h1 className="text-3xl mb-10 lg:md-20">{t("about.title")}</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Naresh, a Fullstack developer passionate about
-              creating meaningful digital experiences. With great in Web
-              development, I thrive on turning ideas into reality through coding
-              and design. My journey began with a fascination for technology and
-              a drive to make a positive impact.
+              {t("about.desc1")}
             </p>
             <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+              {t("about.desc2")}
             </p>
-            <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
+            <h1 className="text-3xl mb-10 lg:md-20">{t("about.stuffIUse")}</h1>
             <div className="mb-5">
               {!toolsLoaded ? (
                 <p className="h-[100px]"></p>
@@ -331,6 +340,64 @@ function Page() {
                 </Splide>
               )}
             </div>
+
+            {/* Press & Media Mentions */}
+            {data?.press && data.press.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-zinc-800">
+                <h2 className="text-3xl mb-8 flex items-center gap-3">
+                  <Newspaper className="h-7 w-7 text-indigo-500" />
+                  <span>{language === "vi" ? "Báo chí & Truyền thông" : "Featured Press & Media"}</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {data.press.map((item: any, idx: number) => (
+                    <a
+                      key={idx}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-col bg-zinc-900/40 hover:bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 rounded-xl overflow-hidden transition-all duration-300"
+                    >
+                      {/* Cover Image of News */}
+                      {item.imageUrl && (
+                        <div className="relative w-full h-40 overflow-hidden bg-zinc-950">
+                          <img
+                            src={item.imageUrl}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                            onError={(e) => {
+                              (e.target as HTMLElement).style.display = "none";
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
+                          {item.publisher && (
+                            <span className="absolute top-3 left-3 bg-indigo-600/95 text-white font-semibold text-[10px] uppercase px-2 py-0.5 rounded tracking-wide shadow-md">
+                              {item.publisher}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Card Content */}
+                      <div className="p-5 flex flex-col flex-grow">
+                        {item.date && (
+                          <div className="flex items-center gap-1.5 text-xs text-zinc-500 mb-2">
+                            <Calendar className="h-3.5 w-3.5" />
+                            <span>{item.date}</span>
+                          </div>
+                        )}
+                        <h3 className="text-base font-bold text-white group-hover:text-zinc-200 transition-colors line-clamp-2 leading-snug">
+                          {item.title}
+                        </h3>
+                        <div className="mt-auto pt-4 flex items-center gap-1.5 text-xs text-zinc-400 group-hover:text-white group-hover:underline font-semibold">
+                          <span>{language === "vi" ? "Đọc bài viết" : "Read Article"}</span>
+                          <ExternalLink className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
             {/* <div className="">
               <Splide
                 options={{

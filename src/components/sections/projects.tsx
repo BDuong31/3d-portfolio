@@ -14,8 +14,11 @@ import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language";
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
       <Link href={"#projects"}>
@@ -23,10 +26,10 @@ const ProjectsSection = () => {
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
             "bg-gradient-to-b from-black/80 to-black/50",
-            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32"
+            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-16"
           )}
         >
-          Projects
+          {t("projects.title")}
         </h2>
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-3">
@@ -38,6 +41,8 @@ const ProjectsSection = () => {
   );
 };
 const Modall = ({ project }: { project: Project }) => {
+  const { t } = useLanguage();
+
   return (
     <div className="flex items-center justify-center">
       <Modal>
@@ -71,11 +76,11 @@ const Modall = ({ project }: { project: Project }) => {
           </SmoothScroll>
           <ModalFooter className="gap-4">
             <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
-              Cancel
+              {t("projects.cancel")}
             </button>
             <Link href={project.live} target="_blank">
               <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                Visit
+                {t("projects.visit")}
               </button>
             </Link>
           </ModalFooter>
@@ -87,6 +92,18 @@ const Modall = ({ project }: { project: Project }) => {
 export default ProjectsSection;
 
 const ProjectContents = ({ project }: { project: Project }) => {
+  const { t } = useLanguage();
+
+  // Determine how to render project.content
+  const RenderedContent = () => {
+    if (!project.content) return null;
+    if (typeof project.content === "function") {
+      const ContentComponent = project.content;
+      return <ContentComponent />;
+    }
+    return <>{project.content}</>;
+  };
+
   return (
     <>
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
@@ -95,7 +112,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
       <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible">
         <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
           <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-            Frontend
+            {t("projects.frontend")}
           </p>
           {project.skills.frontend?.length > 0 && (
             <FloatingDock items={project.skills.frontend} />
@@ -104,7 +121,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
         {project.skills.backend?.length > 0 && (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
             <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-              Backend
+              {t("projects.backend")}
             </p>
             <FloatingDock items={project.skills.backend} />
           </div>
@@ -139,7 +156,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </motion.div>
         ))}
       </div> */}
-      {project.content}
+      <RenderedContent />
     </>
   );
 };

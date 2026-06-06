@@ -33,205 +33,31 @@ export type Skill = {
   color: string;
   icon: string;
 };
-export const SKILLS: Record<SkillNames, Skill> = {
-  [SkillNames.PY]: {
-    id: 1,
-    name: "py",
-    label: "Python",
-    shortDescription: "the go-to for data science and AI, no cap! 🐍💻",
-    color: "#3776ab",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  },
-  [SkillNames.JS]: {
-    id: 2,
-    name: "js",
-    label: "JavaScript",
-    shortDescription: "yeeting code into the DOM since '95, no cap! 💯🚀",
-    color: "#f0db4f",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-  [SkillNames.TS]: {
-    id: 3,
-    name: "ts",
-    label: "TypeScript",
-    shortDescription:
-      "JavaScript's overachieving cousin who's always flexing 💯🔒",
-    color: "#007acc",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-  [SkillNames.HTML]: {
-    id: 4,
-    name: "html",
-    label: "HTML",
-    shortDescription: "the internet's granddad,  still bussin' fr fr! 💀🔥",
-    color: "#e34c26",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  },
-  [SkillNames.CSS]: {
-    id: 5,
-    name: "css",
-    label: "CSS",
-    shortDescription: "styling with the ultimate drip, no cap 💁‍♂️🔥",
-    color: "#563d7c",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  },
-  [SkillNames.REACT]: {
-    id:6,
-    name: "react",
-    label: "React",
-    shortDescription: `"use using" 
-using use = useUsing("use")`,
-    color: "#61dafb",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  [SkillNames.NEXTJS]: {
-    id: 7,
-    name: "nextjs",
-    label: "Next.js",
-    shortDescription:
-      "the drama queen of front-end frameworks, and we stan! 👑📜",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-  [SkillNames.TAILWIND]: {
-    id: 8,
-    name: "tailwind",
-    label: "Tailwind",
-    shortDescription: "utility classes hitting different fr fr 🌪️🔥",
-    color: "#38bdf8",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-  },
-  [SkillNames.NODEJS]: {
-    id: 9,
-    name: "nodejs",
-    label: "Node.js",
-    shortDescription: "JavaScript said 'sike, I'm backend now', deadass! 🔙🔚",
-    color: "#6cc24a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-  [SkillNames.EXPRESS]: {
-    id: 10,
-    name: "express",
-    label: "Express",
-    shortDescription: "middlewares go dummy hard, no cap! 🚂💨",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-  },
-  [SkillNames.NESTJS]: {
-    id: 11,
-    name: "nestjs",
-    label: "NestJS",
-    shortDescription: "Node.js but make it classy, fr fr! 🏰🤵",
-    color: "#e0234e",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
-  },
-  [SkillNames.DJANGO]: {
-    id: 12,
-    name: "django",
-    label: "Django",
-    shortDescription: "the web framework that slaps, no cap! 🕸️🔥",
-    color: "#092e20",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg",
-  },
-  [SkillNames.FLASK]: {
-    id: 13,
-    name: "flask",
-    label: "Flask",
-    shortDescription: "micro but mighty, just like your morning coffee! ☕⚡",
-    color: "#000000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-  },
-  [SkillNames.POSTGRES]: {
-    id: 14,
-    name: "postgres",
-    label: "PostgreSQL",
-    shortDescription: "SQL but make it fashion, purr 💅🐘",
-    color: "#336791",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  },
-  [SkillNames.MONGODB]: {
-    id: 15,
-    name: "mongodb",
-    label: "MongoDB",
-    shortDescription: "flexin' with that NoSQL drip, respectfully! 💪🍃",
-    color: "#336791",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-  },
-  [SkillNames.REDIS]: {
-    id: 16,
-    name: "redis",
-    label: "Redis",
-    shortDescription: "speeding up data like it's on roller skates, no cap! 🛼⚡",
-    color: "#d82c20",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-  },
+import portfolioData from "./portfolio-data.json";
 
-  [SkillNames.PRISMA]: {
-    id: 17,
-    name: "prisma",
-    label: "Prisma",
-    shortDescription: "ORM that makes databases feel like a breeze, fr fr! 🌬️💾",
-    color: "#0c344b",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
-  },
-  [SkillNames.GIT]: {
-    id: 18,
-    name: "git",
-    label: "Git",
-    shortDescription: "the code's personal bodyguard, no cap! 🕵️‍♂️🔄",
-    color: "#f1502f",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  [SkillNames.GITHUB]: {
-    id: 19,
-    name: "github",
-    label: "GitHub",
-    shortDescription: "sliding into those pull requests, IYKYK! 🐙",
-    color: "#000000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-  },
-  [SkillNames.NPM]: {
-    id: 20,
-    name: "npm",
-    label: "NPM",
-    shortDescription: "package manager said 'I gotchu fam', period! 📦💯",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-  },
-  [SkillNames.LINUX]: {
-    id: 21,
-    name: "linux",
-    label: "Linux",
-    shortDescription: "where 'chmod 777' is the ultimate flex 🔓🙌",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-  },
-  [SkillNames.DOCKER]: {
-    id: 22,
-    name: "docker",
-    label: "Docker",
-    shortDescription: "The best containerization! 🐳🔥",
-    color: "#2496ed",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  },
-  [SkillNames.NGINX]: {
-    id: 23,
-    name: "nginx",
-    label: "NginX",
-    shortDescription: "reverse proxy go zoom zoom, sheesh! 🚗💨",
-    color: "#008000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
-  },
-  [SkillNames.VERCEL]: {
-    id: 24,
-    name: "vercel",
-    label: "Vercel",
-    shortDescription:
-      "The triangle compony, helps you deploy and go touch grass! 🚀🌿",
-    color: "#6cc24a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-  },
-};
+export const SKILLS = {} as Record<SkillNames, Skill>;
+
+export function updateSkills(newSkills: any[]) {
+  if (!newSkills || !Array.isArray(newSkills)) return;
+  // Clear the existing keys in SKILLS object
+  Object.keys(SKILLS).forEach((key) => {
+    delete SKILLS[key as SkillNames];
+  });
+  // Repopulate
+  newSkills.forEach((skill: any, index: number) => {
+    SKILLS[skill.name as SkillNames] = {
+      id: index + 1,
+      name: skill.name,
+      label: skill.label,
+      shortDescription: "", // loaded reactively from translation dictionary
+      color: skill.color,
+      icon: skill.icon,
+    };
+  });
+}
+
+// Initial population
+updateSkills(portfolioData.skills);
 
 export const themeDisclaimers = {
   light: [

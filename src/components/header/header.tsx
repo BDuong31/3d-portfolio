@@ -7,9 +7,11 @@ import { opacity, background } from "./anim";
 import Nav from "./nav";
 import { cn } from "@/lib/utils";
 import FunnyThemeToggle from "../theme/funny-theme-toggle";
+import LanguageToggle from "../language-toggle";
 import { Button } from "../ui/button";
 import { config } from "@/data/config";
 import OnlineUsers from "../realtime/online-users";
+import { useLanguage } from "@/contexts/language";
 
 interface HeaderProps {
   loader?: boolean;
@@ -17,6 +19,8 @@ interface HeaderProps {
 
 const Header = ({ loader }: HeaderProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const { t } = useLanguage();
+
   return (
     <motion.header
       className={cn(
@@ -49,11 +53,12 @@ const Header = ({ loader }: HeaderProps) => {
       <div className={cn(styles.bar, "flex items-center justify-between")}>
         <Link href="/" className="flex items-center justify-center">
           <Button variant={"link"} className="text-md">
-            {config.author}
+            {t("author")}
           </Button>
         </Link>
 
         <OnlineUsers />
+        <LanguageToggle className="mr-2" />
         <FunnyThemeToggle className="w-6 h-6 mr-4" />
         <Button
           variant={"ghost"}
@@ -68,10 +73,10 @@ const Header = ({ loader }: HeaderProps) => {
               variants={opacity}
               animate={!isActive ? "open" : "closed"}
             >
-              Menu
+              {t("nav.menu")}
             </motion.p>
             <motion.p variants={opacity} animate={isActive ? "open" : "closed"}>
-              Close
+              {t("nav.close")}
             </motion.p>
           </div>
           <div

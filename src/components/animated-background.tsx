@@ -10,6 +10,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/contexts/language";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,21 +29,21 @@ const STATES = {
   },
   about: {
     desktop: {
-      scale: { x: 0.4, y: 0.4, z: 0.4 },
-      position: { x: 0, y: -40, z: 0 },
+      scale: { x: 0.25, y: 0.25, z: 0.25 },
+      position: { x: 400, y: -300, z: 0 },
       rotation: {
-        x: 0,
-        y: Math.PI / 12,
-        z: 0,
+        x: Math.PI,
+        y: Math.PI / 3,
+        z: Math.PI,
       },
     },
     mobile: {
-      scale: { x: 0.2, y: 0.2, z: 0.2 },
-      position: { x: 0, y: -40, z: 0 },
+      scale: { x: 0.15, y: 0.15, z: 0.15 },
+      position: { x: 0, y: -200, z: 0 },
       rotation: {
-        x: 0,
-        y: Math.PI / 6,
-        z: 0,
+        x: Math.PI,
+        y: Math.PI / 3,
+        z: Math.PI,
       },
     },
   },
@@ -88,12 +89,32 @@ const STATES = {
   },
   contact: {
     desktop: {
-      scale: { x: 0.3, y: 0.3, z: 0.3 },
-      position: { x: 500, y: -250, z: 0 },
+      scale: { x: 0.25, y: 0.25, z: 0.25 },
+      position: { x: 400, y: -250, z: 0 },
       rotation: {
         x: 0,
         y: 0,
         z: 0,
+      },
+    },
+    mobile: {
+      scale: { x: 0.15, y: 0.15, z: 0.15 },
+      position: { x: 0, y: 150, z: 0 },
+      rotation: {
+        x: Math.PI,
+        y: Math.PI / 3,
+        z: Math.PI,
+      },
+    },
+  },
+  press: {
+    desktop: {
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
+      position: { x: 0, y: -40, z: 0 },
+      rotation: {
+        x: Math.PI,
+        y: Math.PI / 3,
+        z: Math.PI,
       },
     },
     mobile: {
@@ -108,11 +129,12 @@ const STATES = {
   },
 };
 
-type Section = "hero" | "about" | "skills" | "projects" | "contact";
+type Section = "hero" | "about" | "skills" | "projects" | "press" | "contact";
 
 const AnimatedBackground = () => {
   const { isLoading, bypassLoading } = usePreloader();
   const { theme } = useTheme();
+  const { t } = useLanguage();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const splineContainer = useRef<HTMLDivElement>(null);
   const [splineApp, setSplineApp] = useState<Application>();
@@ -155,7 +177,7 @@ const AnimatedBackground = () => {
   useEffect(() => {
     if (!selectedSkill || !splineApp) return;
     splineApp.setVariable("heading", selectedSkill.label);
-    splineApp.setVariable("desc", selectedSkill.shortDescription);
+    splineApp.setVariable("desc", t(`skillsDesc.${selectedSkill.name}`));
   }, [selectedSkill]);
 
   // handle keyboard heading and desc visibility
@@ -260,7 +282,7 @@ const AnimatedBackground = () => {
         splineApp.setVariable("heading", "");
         splineApp.setVariable("desc", "");
       }
-      if (activeSection === "projects") {
+      if (activeSection === "projects" || activeSection === "about" || activeSection === "press") {
         await sleep(300);
         bongoAnimation?.start();
       } else {
@@ -356,7 +378,7 @@ const AnimatedBackground = () => {
       const skill = SKILLS[e.target.name as SkillNames];
       if (skill) setSelectedSkill(skill);
       splineApp.setVariable("heading", skill.label);
-      splineApp.setVariable("desc", skill.shortDescription);
+      splineApp.setVariable("desc", t(`skillsDesc.${skill.name}`));
     });
     splineApp.addEventListener("mouseHover", handleMouseHover);
   };
@@ -369,6 +391,41 @@ const AnimatedBackground = () => {
     });
     gsap.set(kbd.position, {
       ...keyboardStates("hero").position,
+    });
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 50%",
+        end: "bottom bottom",
+        scrub: true,
+        onEnter: () => {
+          setActiveSection("about");
+          gsap.to(kbd.scale, {
+            ...keyboardStates("about").scale,
+            duration: 1,
+          });
+          gsap.to(kbd.position, {
+            ...keyboardStates("about").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("about").rotation,
+            duration: 1,
+          });
+        },
+        onLeaveBack: () => {
+          setActiveSection("hero");
+          gsap.to(kbd.scale, { ...keyboardStates("hero").scale, duration: 1 });
+          gsap.to(kbd.position, {
+            ...keyboardStates("hero").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("hero").rotation,
+            duration: 1,
+          });
+        },
+      },
     });
     gsap.timeline({
       scrollTrigger: {
@@ -393,17 +450,16 @@ const AnimatedBackground = () => {
           });
         },
         onLeaveBack: () => {
-          setActiveSection("hero");
-          gsap.to(kbd.scale, { ...keyboardStates("hero").scale, duration: 1 });
+          setActiveSection("about");
+          gsap.to(kbd.scale, { ...keyboardStates("about").scale, duration: 1 });
           gsap.to(kbd.position, {
-            ...keyboardStates("hero").position,
+            ...keyboardStates("about").position,
             duration: 1,
           });
           gsap.to(kbd.rotation, {
-            ...keyboardStates("hero").rotation,
+            ...keyboardStates("about").rotation,
             duration: 1,
           });
-          // gsap.to(kbd.rotation, { x: 0, duration: 1 });
         },
       },
     });
@@ -449,6 +505,44 @@ const AnimatedBackground = () => {
     });
     gsap.timeline({
       scrollTrigger: {
+        trigger: "#press",
+        start: "top 70%",
+        end: "bottom bottom",
+        scrub: true,
+        onEnter: () => {
+          setActiveSection("press");
+          gsap.to(kbd.scale, {
+            ...keyboardStates("press").scale,
+            duration: 1,
+          });
+          gsap.to(kbd.position, {
+            ...keyboardStates("press").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("press").rotation,
+            duration: 1,
+          });
+        },
+        onLeaveBack: () => {
+          setActiveSection("projects");
+          gsap.to(kbd.scale, {
+            ...keyboardStates("projects").scale,
+            duration: 1,
+          });
+          gsap.to(kbd.position, {
+            ...keyboardStates("projects").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("projects").rotation,
+            duration: 1,
+          });
+        },
+      },
+    });
+    gsap.timeline({
+      scrollTrigger: {
         trigger: "#contact",
         start: "top 30%",
         end: "bottom bottom",
@@ -470,17 +564,17 @@ const AnimatedBackground = () => {
           });
         },
         onLeaveBack: () => {
-          setActiveSection("projects");
+          setActiveSection("press");
           gsap.to(kbd.scale, {
-            ...keyboardStates("projects").scale,
+            ...keyboardStates("press").scale,
             duration: 1,
           });
           gsap.to(kbd.position, {
-            ...keyboardStates("projects").position,
+            ...keyboardStates("press").position,
             duration: 1,
           });
           gsap.to(kbd.rotation, {
-            ...keyboardStates("projects").rotation,
+            ...keyboardStates("press").rotation,
             duration: 1,
           });
           // gsap.to(kbd.rotation, { x: 0, duration: 1 });

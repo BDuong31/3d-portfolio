@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/contexts/language";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -17,6 +18,7 @@ const ContactForm = () => {
 
   const { toast } = useToast();
   const router = useRouter();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,8 +38,8 @@ const ContactForm = () => {
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       toast({
-        title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        title: t("contact.successTitle"),
+        description: t("contact.successDesc"),
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
@@ -51,8 +53,8 @@ const ContactForm = () => {
       }, 1000);
     } catch (err) {
       toast({
-        title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        title: t("contact.errorTitle"),
+        description: t("contact.errorDesc"),
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
@@ -65,10 +67,10 @@ const ContactForm = () => {
     <form className="min-w-7xl mx-auto sm:mt-4" onSubmit={handleSubmit}>
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
         <LabelInputContainer>
-          <Label htmlFor="fullname">Full name</Label>
+          <Label htmlFor="fullname">{t("contact.fullName")}</Label>
           <Input
             id="fullname"
-            placeholder="Your Name"
+            placeholder={t("contact.fullNamePlaceholder")}
             type="text"
             required
             value={fullName}
@@ -76,10 +78,10 @@ const ContactForm = () => {
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
+          <Label htmlFor="email">{t("contact.email")}</Label>
           <Input
             id="email"
-            placeholder="you@example.com"
+            placeholder={t("contact.emailPlaceholder")}
             type="email"
             required
             value={email}
@@ -88,16 +90,16 @@ const ContactForm = () => {
         </LabelInputContainer>
       </div>
       <div className="grid w-full gap-1.5 mb-4">
-        <Label htmlFor="content">Your Message</Label>
+        <Label htmlFor="content">{t("contact.message")}</Label>
         <Textarea
-          placeholder="Tell me about about your project,"
+          placeholder={t("contact.messagePlaceholder")}
           id="content"
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
         <p className="text-sm text-muted-foreground">
-          I&apos;ll never share your data with anyone else. Pinky promise!
+          {t("contact.promise")}
         </p>
       </div>
       <Button
@@ -108,11 +110,11 @@ const ContactForm = () => {
         {loading ? (
           <div className="flex items-center justify-center">
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            <p>Please wait</p>
+            <p>{t("contact.wait")}</p>
           </div>
         ) : (
           <div className="flex items-center justify-center">
-            Send Message <ChevronRight className="w-4 h-4 ml-4" />
+            {t("contact.send")} <ChevronRight className="w-4 h-4 ml-4" />
           </div>
         )}
         <BottomGradient />

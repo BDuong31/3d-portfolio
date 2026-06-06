@@ -12,7 +12,11 @@ import ContactForm from "../ContactForm";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { config } from "@/data/config";
+import { useLanguage } from "@/contexts/language";
+
 const ContactSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="min-h-screen max-w-7xl mx-auto ">
       <Link href={"#contact"}>
@@ -23,16 +27,19 @@ const ContactSection = () => {
             "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50"
           )}
         >
-          LET&apos;S WORK <br />
-          TOGETHER
+          {t("contact.letsWorkTogether").split(" ").map((w, idx) => (
+            <React.Fragment key={idx}>
+              {w} {idx === 1 && <br />}
+            </React.Fragment>
+          ))}
         </h2>
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 z-[9999]">
         <Card className="min-w-7xl bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl mt-10 md:mt-20">
           <CardHeader>
-            <CardTitle className="text-4xl">Contact Form</CardTitle>
+            <CardTitle className="text-4xl">{t("contact.contactFormTitle")}</CardTitle>
             <CardDescription>
-              Please contact me directly at{" "}
+              {t("contact.contactDirect")}{" "}
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
@@ -40,7 +47,7 @@ const ContactSection = () => {
               >
                 {config.email.replace(/@/g, "(at)")}
               </a>{" "}
-              or drop your info here.
+              {t("contact.orDropInfo")}
             </CardDescription>
           </CardHeader>
           <CardContent>

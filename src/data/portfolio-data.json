@@ -1,0 +1,787 @@
+{
+  "config": {
+    "author": {
+      "en": "Vu Thai Binh Duong",
+      "vi": "Vũ Thái Bình Dương"
+    },
+    "title": "Vu Thai Binh Duong | Full-Stack Developer",
+    "email": "binhduong31725@gmail.com",
+    "resumeUrl": "https://drive.google.com/file/d/1KvXjtFeXeB9T2I-fxH9VDDS5OY-B6lSy/view?usp=sharing",
+    "social": {
+      "twitter": "https://x.com/BnhDngVThi1",
+      "linkedin": "https://www.linkedin.com/in/bduonng/",
+      "instagram": "https://www.instagram.com/bduuong/",
+      "facebook": "https://www.facebook.com/BDuonng/",
+      "github": "https://github.com/BDuong31"
+    },
+    "description": {
+      "en": "Explore the portfolio of Vu Thai Binh Duong, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
+      "vi": "Khám phá danh mục dự án của Vũ Thái Bình Dương, nhà phát triển full-stack và công nghệ sáng tạo chuyên về trải nghiệm web tương tác, hoạt ảnh 3D và các dự án đổi mới. Khám phá các công việc mới nhất của tôi, bao gồm Coding Ducks, The Booking Desk, Ghostchat, v.v. Hãy cùng nhau xây dựng điều gì đó tuyệt vời!"
+    },
+    "about": {
+      "avatar": "/assets/me.jpg",
+      "available": true,
+      "role": {
+        "en": "Full-Stack & AI Developer",
+        "vi": "Lập trình viên Full-Stack & AI"
+      },
+      "title": {
+        "en": "About me",
+        "vi": "Về tôi"
+      },
+      "desc1": {
+        "en": "Hey there! I'm Binh Duong, a Fullstack and AI developer passionate about creating meaningful digital experiences. With expertise in Web development and AI, I thrive on turning ideas into reality through coding and design. My journey began with a fascination for technology and a drive to make a positive impact.",
+        "vi": "Xin chào! Tôi là Bình Dương, một lập trình viên Fullstack và AI đầy nhiệt huyết với mong muốn tạo ra những trải nghiệm kỹ thuật số ý nghĩa. Bằng kiến thức chuyên môn về phát triển Web và AI, tôi luôn nỗ lực biến ý tưởng thành hiện thực thông qua lập trình và thiết kế. Hành trình của tôi bắt đầu từ sự đam mê công nghệ và mong muốn đóng góp giá trị tích cực."
+      },
+      "desc2": {
+        "en": "I am passionate about learning new things, enjoy playing chess, reading books and taking long walks with my dog.",
+        "vi": "Tôi là người luôn ham học hỏi những điều mới, thích chơi cờ, đọc sách và dắt chó đi dạo."
+      }
+    }
+  },
+  "skills": [
+    {
+      "name": "py",
+      "label": "Python",
+      "color": "#3776ab",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      "name": "js",
+      "label": "JavaScript",
+      "color": "#f0db4f",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "ts",
+      "label": "TypeScript",
+      "color": "#007acc",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "html",
+      "label": "HTML",
+      "color": "#e34c26",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+    },
+    {
+      "name": "css",
+      "label": "CSS",
+      "color": "#563d7c",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+    },
+    {
+      "name": "react",
+      "label": "React",
+      "color": "#61dafb",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      "name": "nextjs",
+      "label": "Next.js",
+      "color": "#ffffff",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+    },
+    {
+      "name": "tailwind",
+      "label": "Tailwind",
+      "color": "#38bdf8",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+    },
+    {
+      "name": "nodejs",
+      "label": "Node.js",
+      "color": "#6cc24a",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    },
+    {
+      "name": "express",
+      "label": "Express",
+      "color": "#ffffff",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+    },
+    {
+      "name": "nestjs",
+      "label": "NestJS",
+      "color": "#e0234e",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+    },
+    {
+      "name": "django",
+      "label": "Django",
+      "color": "#092e20",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg"
+    },
+    {
+      "name": "flask",
+      "label": "Flask",
+      "color": "#000000",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+    },
+    {
+      "name": "postgres",
+      "label": "PostgreSQL",
+      "color": "#336791",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    },
+    {
+      "name": "mongodb",
+      "label": "MongoDB",
+      "color": "#336791",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    {
+      "name": "redis",
+      "label": "Redis",
+      "color": "#d82c20",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+    },
+    {
+      "name": "prisma",
+      "label": "Prisma",
+      "color": "#0c344b",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg"
+    },
+    {
+      "name": "git",
+      "label": "Git",
+      "color": "#f1502f",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    },
+    {
+      "name": "github",
+      "label": "GitHub",
+      "color": "#000000",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    },
+    {
+      "name": "npm",
+      "label": "NPM",
+      "color": "#ffffff",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
+    },
+    {
+      "name": "linux",
+      "label": "Linux",
+      "color": "#ffffff",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+    },
+    {
+      "name": "docker",
+      "label": "Docker",
+      "color": "#2496ed",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    },
+    {
+      "name": "nginx",
+      "label": "NginX",
+      "color": "#008000",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+    },
+    {
+      "name": "vercel",
+      "label": "Vercel",
+      "color": "#6cc24a",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+    }
+  ],
+  "projects": [
+    {
+      "id": "basospark",
+      "title": "Baso Spark (Social Network)",
+      "category": "Social network",
+      "src": "/assets/projects-screenshots/basospark/landing.png",
+      "screenshots": [
+        "landing.png"
+      ],
+      "live": "",
+      "github": "https://github.com/BDuong31/Baso-Spark.git",
+      "skills": {
+        "frontend": [
+          "ts",
+          "next",
+          "tailwind",
+          "reactQuery"
+        ],
+        "backend": [
+          "node",
+          "nest",
+          "prisma",
+          "postgres",
+          "sockerio"
+        ]
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "en": "Baso Spark - Connect, Share, and Spark Conversations!",
+          "vi": "Baso Spark - Kết nối, Chia sẻ, và Khơi nguồn Trò chuyện!"
+        },
+        {
+          "type": "paragraph",
+          "en": "Baso Spark is a dynamic social networking platform designed to bring people together. Whether you're looking to share your thoughts, connect with friends, or discover new interests, Baso Spark has got you covered.",
+          "vi": "Baso Spark là một nền tảng mạng xã hội năng động được thiết kế để kết nối mọi người lại với nhau. Cho dù bạn muốn chia sẻ suy nghĩ, kết nối với bạn bè hay khám phá những sở thích mới, Baso Spark đều đáp ứng được cho bạn."
+        },
+        {
+          "type": "links"
+        },
+        {
+          "type": "heading",
+          "en": "Auth",
+          "vi": "Xác thực"
+        },
+        {
+          "type": "paragraph",
+          "en": "Securely sign up and log in using email or social media accounts. Your data is protected with industry-standard encryption.",
+          "vi": "Đăng ký và đăng nhập an toàn bằng email hoặc tài khoản mạng xã hội. Dữ liệu của bạn được bảo vệ bằng mã hóa tiêu chuẩn."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Register.png",
+            "/assets/projects-screenshots/basospark/Login.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        {
+          "type": "paragraph",
+          "en": "Stay updated with a personalized feed of posts from your friends and communities you follow.",
+          "vi": "Cập nhật bảng tin cá nhân hóa với các bài viết từ bạn bè và cộng đồng mà bạn theo dõi."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Home.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Notifications",
+          "vi": "Thông báo"
+        },
+        {
+          "type": "paragraph",
+          "en": "Stay informed with real-time notifications for likes, comments, and new followers.",
+          "vi": "Luôn cập nhật thông tin với các thông báo thời gian thực về lượt thích, bình luận và người theo dõi mới."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Notification.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Messages",
+          "vi": "Tin nhắn"
+        },
+        {
+          "type": "paragraph",
+          "en": "Connect with friends through instant messaging and group chats.",
+          "vi": "Kết nối với bạn bè thông qua nhắn tin tức thời và trò chuyện nhóm."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Message.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Bookmarks",
+          "vi": "Đánh dấu"
+        },
+        {
+          "type": "paragraph",
+          "en": "Save your favorite posts and access them anytime from your bookmarks.",
+          "vi": "Lưu các bài viết yêu thích của bạn và truy cập chúng bất cứ lúc nào từ dấu trang."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Bookmark.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Explore",
+          "vi": "Khám phá"
+        },
+        {
+          "type": "paragraph",
+          "en": "Discover new content, trending topics, and communities tailored to your interests.",
+          "vi": "Khám phá nội dung mới, chủ đề thịnh hành và cộng đồng phù hợp với sở thích của bạn."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Explore.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Profile",
+          "vi": "Trang cá nhân"
+        },
+        {
+          "type": "paragraph",
+          "en": "Customize your profile, share your story, and showcase your posts and achievements.",
+          "vi": "Tùy chỉnh trang cá nhân, chia sẻ câu chuyện của bạn, đồng thời hiển thị các bài viết và thành tích của bạn."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Profile.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Follow",
+          "vi": "Theo dõi"
+        },
+        {
+          "type": "paragraph",
+          "en": "Connect with friends and influencers by following their profiles to see their latest updates.",
+          "vi": "Kết nối với bạn bè và những người có ảnh hưởng bằng cách theo dõi trang cá nhân của họ để xem các cập nhật mới nhất."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Followers.png",
+            "/assets/projects-screenshots/basospark/Following.png"
+          ]
+        },
+        {
+          "type": "heading",
+          "en": "Settings",
+          "vi": "Cài đặt"
+        },
+        {
+          "type": "paragraph",
+          "en": "Manage your account settings, privacy preferences, and notification preferences.",
+          "vi": "Quản lý cài đặt tài khoản, tùy chọn quyền riêng tư và tùy chọn thông báo."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/assets/projects-screenshots/basospark/Setting.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "slug": "building-3d-portfolio-nextjs",
+      "title": {
+        "en": "Building a Premium 3D Portfolio with Next.js & Framer Motion",
+        "vi": "Xây dựng Portfolio 3D Cao cấp với Next.js & Framer Motion"
+      },
+      "excerpt": {
+        "en": "Learn how to integrate 3D elements, smooth scrollings, and micro-interactions into your Next.js application to wow your visitors.",
+        "vi": "Tìm hiểu cách tích hợp các yếu tố 3D, cuộn mượt mà và tương tác nhỏ vào ứng dụng Next.js của bạn để gây ấn tượng với khách truy cập."
+      },
+      "date": "2026-06-05",
+      "readTime": {
+        "en": "5 min read",
+        "vi": "5 phút đọc"
+      },
+      "coverImage": "bg-gradient-to-br from-violet-600 to-indigo-900",
+      "tags": ["Next.js", "Framer Motion", "3D", "Web Design"],
+      "content": {
+        "en": [
+          {
+            "type": "heading",
+            "text": "Why 3D Portfolios Stand Out"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a sea of standard grid-based portfolios, adding three-dimensional elements and micro-interactions immediately grabs the visitor's attention. It showcases not only your frontend skills but also your design sensibilities and eye for detail."
+          },
+          {
+            "type": "paragraph",
+            "text": "In this article, we'll talk about how to achieve this using modern web technologies like Next.js 14, Tailwind CSS, and Framer Motion."
+          },
+          {
+            "type": "heading",
+            "text": "Setting Up the Project"
+          },
+          {
+            "type": "paragraph",
+            "text": "We start by initializing a Next.js project with Tailwind CSS. We will also install framer-motion and lucide-react for animations and icons:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "npx create-next-app@latest my-3d-portfolio --typescript --tailwind --app\nnpm install framer-motion lucide-react canvas-confetti @types/canvas-confetti"
+          },
+          {
+            "type": "heading",
+            "text": "Creating the Interactive Particle System"
+          },
+          {
+            "type": "paragraph",
+            "text": "A subtle, interactive background makes the page feel alive without distracting the viewer. Here is how we can implement a custom React canvas particles component:"
+          },
+          {
+            "type": "code",
+            "language": "tsx",
+            "code": "\"use client\";\nimport React, { useRef, useEffect } from \"react\";\n\nexport default function Particles() {\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n  // Animation logic goes here...\n  return <canvas ref={canvasRef} className=\"fixed inset-0 -z-10\" />;\n}"
+          },
+          {
+            "type": "heading",
+            "text": "Best Practices for 3D Assets"
+          },
+          {
+            "type": "paragraph",
+            "text": "When loading 3D assets via libraries like Three.js, React Three Fiber, or Spline, keep these considerations in mind:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Optimize 3D models using gltf-pipeline to compress textures and geometry.",
+              "Always implement a preloader to prevent layout shifts or black screens while assets load.",
+              "Provide an alternative static image layout for mobile browsers that might struggle with high GPU usage.",
+              "Use progressive loading: load lower resolution textures first, then swap in higher resolution ones."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Conclusion"
+          },
+          {
+            "type": "paragraph",
+            "text": "A beautiful 3D website is all about balance. Don't overload the browser with too many heavy shaders or models, and keep user experience clean and readable. Happy coding!"
+          }
+        ],
+        "vi": [
+          {
+            "type": "heading",
+            "text": "Tại sao Portfolio 3D lại nổi bật"
+          },
+          {
+            "type": "paragraph",
+            "text": "Giữa hàng ngàn trang portfolio dạng lưới tiêu chuẩn, việc bổ sung các yếu tố ba chiều và tương tác nhỏ (micro-interactions) ngay lập tức thu hút sự chú ý của người xem. Nó không chỉ thể hiện kỹ năng frontend của bạn mà còn thể hiện tư duy thẩm mỹ và sự chăm chút tỉ mỉ cho từng chi tiết."
+          },
+          {
+            "type": "paragraph",
+            "text": "Trong bài viết này, chúng ta sẽ thảo luận về cách thực hiện điều đó bằng cách sử dụng các công nghệ web hiện đại như Next.js 14, Tailwind CSS và Framer Motion."
+          },
+          {
+            "type": "heading",
+            "text": "Thiết lập dự án"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chúng ta bắt đầu bằng việc khởi tạo một dự án Next.js kết hợp Tailwind CSS. Chúng ta cũng sẽ cài đặt framer-motion và lucide-react để làm animation và icon:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "npx create-next-app@latest my-3d-portfolio --typescript --tailwind --app\nnpm install framer-motion lucide-react canvas-confetti @types/canvas-confetti"
+          },
+          {
+            "type": "heading",
+            "text": "Tạo hệ thống hạt tương tác (Particle System)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Một hình nền nhẹ nhàng, có tương tác hạt giúp trang web trông 'sống động' hơn mà không gây xao nhãng cho người đọc. Dưới đây là cách chúng ta thiết lập canvas particle trong React:"
+          },
+          {
+            "type": "code",
+            "language": "tsx",
+            "code": "\"use client\";\nimport React, { useRef, useEffect } from \"react\";\n\nexport default function Particles() {\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n  // Logic vẽ animation hạt trên canvas...\n  return <canvas ref={canvasRef} className=\"fixed inset-0 -z-10\" />;\n}"
+          },
+          {
+            "type": "heading",
+            "text": "Kinh nghiệm tối ưu hóa tài nguyên 3D"
+          },
+          {
+            "type": "paragraph",
+            "text": "Khi tải các tài nguyên 3D qua Three.js, React Three Fiber hoặc Spline, hãy lưu ý những điều sau:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Nén file mô hình 3D bằng gltf-pipeline hoặc Draco compression để giảm dung lượng tải trang.",
+              "Luôn tạo màn hình tải (Preloader) để tránh giật lag hoặc màn hình đen trong lúc tải file 3D.",
+              "Cung cấp layout ảnh tĩnh thay thế trên các thiết bị di động cấu hình yếu.",
+              "Sử dụng progressive loading: tải texture chất lượng thấp trước, sau đó đổi sang chất lượng cao sau."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Kết luận"
+          },
+          {
+            "type": "paragraph",
+            "text": "Một trang web 3D đẹp phụ thuộc nhiều vào sự cân bằng. Đừng lạm dụng quá nhiều hiệu ứng shaders nặng nề hoặc mô hình phức tạp, đồng thời giữ cho trải nghiệm người dùng sạch sẽ và dễ đọc nhất. Chúc các bạn code vui vẻ!"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "getting-started-ai-agent-coding",
+      "title": {
+        "en": "Getting Started with AI Agent Coding",
+        "vi": "Bắt đầu lập trình với AI Agent"
+      },
+      "excerpt": {
+        "en": "Discover how autonomous AI coders work, and how you can leverage them to double your coding speed and build complex applications in hours.",
+        "vi": "Khám phá cách thức hoạt động của các AI Agent lập trình tự động, và cách bạn có thể tận dụng chúng để nhân đôi tốc độ code và xây dựng ứng dụng phức tạp chỉ trong vài giờ."
+      },
+      "date": "2026-06-01",
+      "readTime: en": "6 min read",
+      "readTime": {
+        "en": "6 min read",
+        "vi": "6 phút đọc"
+      },
+      "coverImage": "bg-gradient-to-br from-cyan-600 to-blue-900",
+      "tags": ["AI", "LLM", "AI Agent", "Coding Tools"],
+      "content": {
+        "en": [
+          {
+            "type": "heading",
+            "text": "The Rise of Autonomous Coding Agents"
+          },
+          {
+            "type": "paragraph",
+            "text": "Coding assistants have evolved from simple auto-complete suggestions to autonomous agents capable of researching a codebase, running shell commands, executing tests, and debugging issues on their own. Tools like Devin, Antigravity, and other advanced systems are redefining what developer productivity means."
+          },
+          {
+            "type": "heading",
+            "text": "How AI Agents Solve Complex Coding Tasks"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unlike a standard chatbot, an AI Coding Agent works in a loop containing several steps:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Research: Searching files, grep searching the codebase, and reading relevant files to gather context.",
+              "Planning: Building a mental model of the requirements and describing the plan to the developer.",
+              "Execution: Editing existing files or creating new ones using precise diff or write tools.",
+              "Verification: Proposing shell commands to compile code, run tests, and fix bugs iteratively until everything passes."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How Developers Can Collaborate with AI Agents"
+          },
+          {
+            "type": "paragraph",
+            "text": "Instead of seeing AI agents as competitors, smart developers treat them as highly efficient junior engineers. You can delegate tedious tasks (e.g. adding unit tests, writing boilerplate configurations, restructuring styling) while focusing your energy on architecture design, security reviews, and business logic."
+          },
+          {
+            "type": "code",
+            "language": "javascript",
+            "code": "// Example of prompt engineering for code agents:\nconst prompt = `\n1. Search for existing button components in src/components/ui.\n2. Create a new primary Button component with custom hover glow.\n3. Make sure to support active, disabled, and loading states.\n`;"
+          },
+          {
+            "type": "heading",
+            "text": "Looking Ahead"
+          },
+          {
+            "type": "paragraph",
+            "text": "In the next few years, software development will involve less manual typing and more high-level direction, design iteration, and codebase alignment. Getting comfortable with these tools today gives you a massive head start."
+          }
+        ],
+        "vi": [
+          {
+            "type": "heading",
+            "text": "Sự trỗi dậy của các AI Agent lập trình tự động"
+          },
+          {
+            "type": "paragraph",
+            "text": "Các công cụ hỗ trợ code đã phát triển vượt bậc, từ các gợi ý tự động hoàn thành đơn giản (auto-complete) lên thành các tác nhân tự động (autonomous agents) có khả năng tự nghiên cứu codebase, chạy lệnh shell, kiểm thử mã nguồn và tự sửa lỗi. Các hệ thống như Devin, Antigravity đang định nghĩa lại năng suất lập trình."
+          },
+          {
+            "type": "heading",
+            "text": "Cách AI Agent giải quyết các tác vụ code phức tạp"
+          },
+          {
+            "type": "paragraph",
+            "text": "Khác với chatbot thông thường, một AI Coding Agent hoạt động theo chu kỳ khép kín gồm các bước:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Nghiên cứu (Research): Tìm kiếm tệp tin, grep tìm kiếm từ khóa trong mã nguồn và đọc tài liệu để thu thập ngữ cảnh.",
+              "Lên kế hoạch (Planning): Xây dựng mô hình giải pháp và vạch ra các bước thực hiện chi tiết.",
+              "Thực thi (Execution): Tạo mới hoặc chỉnh sửa tệp tin thông qua các công cụ chỉnh sửa hoặc tạo code.",
+              "Xác thực (Verification): Chạy thử dự án, chạy test suite, phát hiện lỗi biên dịch và lặp lại việc sửa lỗi cho đến khi hoàn hảo."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Cách lập trình viên cộng tác hiệu quả với AI Agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Thay vì coi các AI agent là đối thủ, các lập trình viên thông thái coi chúng như những kỹ sư cấp dưới (junior engineers) cực kỳ nhanh nhẹn. Bạn có thể giao phó các công việc lặp đi lặp lại (như viết unit test, dựng boilerplate, chỉnh css) và dành thời gian cho thiết kế kiến trúc, đánh giá bảo mật và logic nghiệp vụ."
+          },
+          {
+            "type": "code",
+            "language": "javascript",
+            "code": "// Ví dụ viết prompt hướng dẫn AI Agent:\nconst prompt = `\n1. Tìm kiếm các button component sẵn có trong thư mục src/components/ui.\n2. Tạo ra một Button component mới có hiệu ứng glow khi hover.\n3. Hãy đảm bảo hỗ trợ đầy đủ các trạng thái active, disabled và loading.\n`;"
+          },
+          {
+            "type": "heading",
+            "text": "Tương lai phía trước"
+          },
+          {
+            "type": "paragraph",
+            "text": "Trong một vài năm tới, công việc phát triển phần mềm sẽ giảm bớt thao tác gõ phím thủ công và chuyển dịch dần sang tư duy định hướng hệ thống, thiết kế kiến trúc và tinh chỉnh luồng xử lý. Làm quen và làm chủ các công cụ này ngay hôm nay sẽ mang lại cho bạn lợi thế cạnh tranh vô cùng lớn."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "optimizing-nextjs-performance",
+      "title": {
+        "en": "Optimizing Performance in Next.js 14 App Router",
+        "vi": "Tối ưu hóa hiệu năng trong Next.js 14 App Router"
+      },
+      "excerpt": {
+        "en": "A deep dive into server components, static site generation, image optimizations, and streaming to achieve a perfect 100 Lighthouse score.",
+        "vi": "Đi sâu phân tích server components, static site generation, tối ưu hình ảnh, và kỹ thuật streaming để đạt điểm số Lighthouse tối đa 100."
+      },
+      "date": "2026-05-20",
+      "readTime": {
+        "en": "4 min read",
+        "vi": "4 phút đọc"
+      },
+      "coverImage": "bg-gradient-to-br from-emerald-600 to-teal-900",
+      "tags": ["Next.js", "Performance", "React", "SEO"],
+      "content": {
+        "en": [
+          {
+            "type": "heading",
+            "text": "The Importance of Page Speed"
+          },
+          {
+            "type": "paragraph",
+            "text": "A slow website leads to higher bounce rates and poor search engine rankings. With the introduction of Next.js 14 App Router, developers have access to built-in optimizations that make fast loading easier than ever. Let's look at key areas you should focus on."
+          },
+          {
+            "type": "heading",
+            "text": "1. Leverage Server Components (RSC)"
+          },
+          {
+            "type": "paragraph",
+            "text": "By default, every component inside the App Router is a React Server Component. This means their javascript dependencies are kept on the server and are not sent to the client browser, reducing the total bundle size significantly."
+          },
+          {
+            "type": "code",
+            "language": "tsx",
+            "code": "// This component runs entirely on the server and fetches data directly\nexport default async function Page() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n  \n  return (\n    <div>\n      {data.map((item: any) => (\n        <p key={item.id}>{item.name}</p>\n      ))}\n    </div>\n  );\n}"
+          },
+          {
+            "type": "heading",
+            "text": "2. Image Optimization with next/image"
+          },
+          {
+            "type": "paragraph",
+            "text": "Images are usually the largest assets on web pages. Never use raw HTML <img> tags in Next.js. The built-in `<Image />` component automatically optimizes images:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Serves correctly sized images depending on the screen size of the device.",
+              "Automatically converts images to modern formats like WebP or AVIF.",
+              "Prevents Layout Shifts (CLS) by requiring explicit width and height dimensions.",
+              "Implements lazy loading by default so images are only loaded as they scroll into view."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "3. Streaming with loading.tsx"
+          },
+          {
+            "type": "paragraph",
+            "text": "If a page depends on dynamic database queries or slow external API fetches, you can stream content using loading.tsx. It instantly serves a loading skeleton while the rest of the page loads in the background."
+          },
+          {
+            "type": "heading",
+            "text": "Summary"
+          },
+          {
+            "type": "paragraph",
+            "text": "By utilizing Server Components, optimizing all images, and streaming slow endpoints, your Next.js application will feel lightning fast and score highly in web vitals audits."
+          }
+        ],
+        "vi": [
+          {
+            "type": "heading",
+            "text": "Tầm quan trọng của tốc độ tải trang"
+          },
+          {
+            "type": "paragraph",
+            "text": "Một trang web tải chậm sẽ dẫn đến tỷ lệ thoát trang cao và xếp hạng kém trên các công cụ kiếm. Với việc ra đời Next.js 14 App Router, nhà phát triển có thể tiếp cận với các công cụ tối ưu hóa tích hợp giúp tăng tốc tải trang dễ dàng hơn bao giờ hết. Hãy xem qua các khía cạnh cốt lõi mà bạn cần tập trung."
+          },
+          {
+            "type": "heading",
+            "text": "1. Tận dụng React Server Components (RSC)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Theo mặc định, mọi component trong App Router đều là React Server Component. Điều này có nghĩa là dung lượng code javascript của chúng được giữ lại ở phía máy chủ và không bị gửi xuống trình duyệt client, từ đó giảm đáng kể kích thước gói bundle."
+          },
+          {
+            "type": "code",
+            "language": "tsx",
+            "code": "// Component này chạy hoàn toàn trên server và fetch dữ liệu trực tiếp\nexport default async function Page() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n  \n  return (\n    <div>\n      {data.map((item: any) => (\n        <p key={item.id}>{item.name}</p>\n      ))}\n    </div>\n  );\n}"
+          },
+          {
+            "type": "heading",
+            "text": "2. Tối ưu hóa hình ảnh với next/image"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hình ảnh thường là phần nặng nhất trên trang web. Đừng bao giờ sử dụng thẻ HTML `<img>` thông thường trong Next.js. Component `<Image />` tích hợp sẵn sẽ tự động tối ưu hóa hình ảnh:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Phục vụ kích thước ảnh phù hợp với độ phân giải màn hình của thiết bị.",
+              "Tự động chuyển đổi định dạng ảnh sang WebP hoặc AVIF có độ nén cao hơn.",
+              "Ngăn chặn hiện tượng giật giật giao diện (Cumulative Layout Shift) bằng cách yêu cầu định nghĩa kích thước rõ ràng.",
+              "Hỗ trợ lười tải (lazy load) mặc định: chỉ tải ảnh khi người dùng cuộn đến."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "3. Truyền dữ liệu dạng Streaming với loading.tsx"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nếu một trang web phụ thuộc vào truy vấn database chậm hoặc API bên thứ ba, bạn có thể stream nội dung bằng tệp `loading.tsx`. Nó ngay lập tức hiển thị một bộ khung xương tải trang (loading skeleton) trong khi trang chính được tải ngầm ở background."
+          },
+          {
+            "type": "heading",
+            "text": "Tổng kết"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bằng việc sử dụng Server Components, tối ưu hóa toàn bộ hình ảnh và stream các API chậm, ứng dụng Next.js của bạn sẽ tải nhanh như chớp và đạt điểm số tối đa trong các bài kiểm tra Core Web Vitals."
+          }
+        ]
+      }
+    }
+  ],
+  "press": [
+    {
+      "title": "Vũ Thái Bình Dương - Kiến tạo Tương lai với AI & Full-Stack",
+      "publisher": "TechNews",
+      "url": "https://example.com/featuring-binhduong",
+      "imageUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800",
+      "date": "2026-06-01"
+    }
+  ]
+}

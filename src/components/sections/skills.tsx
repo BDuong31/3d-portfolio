@@ -2,8 +2,11 @@ import Link from "next/link";
 import React from "react";
 import { BoxReveal } from "../reveal-animations";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language";
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="w-full h-screen md:h-[150dvh]">
       <div className="top-[70px] sticky mb-96">
@@ -16,12 +19,12 @@ const SkillsSection = () => {
                 "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 "
               )}
             >
-              SKILLS
+              {t("skills.title")}
             </h2>
           </BoxReveal>
         </Link>
         <p className="mx-auto mt-4 line-clamp-4 max-w-3xl font-normal text-base text-center text-neutral-300">
-          (hint: press a key)
+          {t("skills.hint")}
         </p>
       </div>
     </section>
